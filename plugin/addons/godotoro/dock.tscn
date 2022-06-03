@@ -1,0 +1,338 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://addons/godotoro/dock.gd" type="Script" id=1]
+[ext_resource path="res://addons/godotoro/under.png" type="Texture" id=2]
+[ext_resource path="res://addons/godotoro/progress.png" type="Texture" id=3]
+[ext_resource path="res://addons/godotoro/toggle_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/godotoro/FiraCode-Regular.tres" type="DynamicFont" id=5]
+[ext_resource path="res://addons/godotoro/button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/godotoro/startButton.gd" type="Script" id=7]
+[ext_resource path="res://addons/godotoro/timerLabel.gd" type="Script" id=8]
+[ext_resource path="res://addons/godotoro/TextureRect.gd" type="Script" id=9]
+[ext_resource path="res://addons/godotoro/Icon_5.png" type="Texture" id=10]
+[ext_resource path="res://addons/godotoro/FiraCode-Small.tres" type="DynamicFont" id=12]
+[ext_resource path="res://addons/godotoro/editGroup.gd" type="Script" id=13]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.12549, 0.141176, 0.192157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.12549, 0.141176, 0.192157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.443137, 0.482353, 0.568627, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.12549, 0.141176, 0.192157, 1 )
+
+[node name="Godotoro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Progress" type="VBoxContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 136.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Progress"]
+margin_right = 1024.0
+margin_bottom = 28.0
+custom_constants/margin_top = 8
+custom_constants/margin_bottom = 4
+
+[node name="pipProgress" type="HBoxContainer" parent="VBoxContainer/Progress/MarginContainer"]
+margin_top = 8.0
+margin_right = 1024.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 16, 16 )
+size_flags_horizontal = 3
+custom_constants/separation = 8
+alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/Progress"]
+margin_top = 32.0
+margin_right = 1024.0
+margin_bottom = 104.0
+custom_constants/margin_top = 4
+custom_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Progress/MarginContainer3"]
+margin_top = 4.0
+margin_right = 1024.0
+margin_bottom = 68.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Progress/MarginContainer3/HBoxContainer"]
+margin_right = 433.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = " "
+
+[node name="timerLabel" type="Label" parent="VBoxContainer/Progress/MarginContainer3/HBoxContainer" groups=["focus", "paused", "running"]]
+visible = false
+margin_left = 372.0
+margin_top = 7.0
+margin_right = 497.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 5 )
+text = "25:00"
+align = 2
+script = ExtResource( 8 )
+
+[node name="startButton" type="Button" parent="VBoxContainer/Progress/MarginContainer3/HBoxContainer" groups=["idle"]]
+margin_left = 437.0
+margin_right = 587.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 150, 64 )
+mouse_default_cursor_shape = 2
+custom_colors/font_color = Color( 0.631373, 0.662745, 0.694118, 1 )
+custom_fonts/font = ExtResource( 5 )
+custom_styles/normal = SubResource( 1 )
+text = "Start"
+script = ExtResource( 7 )
+
+[node name="currentIcon" type="TextureRect" parent="VBoxContainer/Progress/MarginContainer3/HBoxContainer" groups=["focus", "paused", "running"]]
+visible = false
+margin_left = 568.0
+margin_top = 17.0
+margin_right = 584.0
+margin_bottom = 33.0
+size_flags_vertical = 4
+texture = ExtResource( 10 )
+script = ExtResource( 9 )
+
+[node name="Label2" type="Label" parent="VBoxContainer/Progress/MarginContainer3/HBoxContainer"]
+margin_left = 591.0
+margin_right = 1024.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = " "
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/Progress"]
+margin_top = 108.0
+margin_right = 1024.0
+margin_bottom = 136.0
+custom_constants/margin_right = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+
+[node name="ProgressBar" type="TextureProgress" parent="VBoxContainer/Progress/MarginContainer2"]
+margin_left = 8.0
+margin_right = 1016.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+max_value = 1800.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+nine_patch_stretch = true
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 140.0
+margin_right = 1024.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="HBoxContainer" parent="VBoxContainer/CenterContainer"]
+margin_left = 456.0
+margin_right = 568.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 823, -24 )
+custom_constants/separation = 8
+
+[node name="==CONTROLS==" type="Label" parent="VBoxContainer/CenterContainer/GridContainer"]
+visible = false
+margin_top = 3.0
+margin_bottom = 17.0
+
+[node name="shortBreak" parent="VBoxContainer/CenterContainer/GridContainer" groups=["focus"] instance=ExtResource( 6 )]
+phase = 4
+
+[node name="longBreak" parent="VBoxContainer/CenterContainer/GridContainer" groups=["final_focus"] instance=ExtResource( 6 )]
+icon = "Icon_6"
+phase = 5
+
+[node name="focus" parent="VBoxContainer/CenterContainer/GridContainer" groups=["break"] instance=ExtResource( 6 )]
+icon = "Icon_5"
+phase = 3
+
+[node name="unpause" parent="VBoxContainer/CenterContainer/GridContainer" groups=["paused"] instance=ExtResource( 6 )]
+margin_left = 40.0
+margin_right = 72.0
+icon = "Icon_7"
+phase = 2
+
+[node name="pause" parent="VBoxContainer/CenterContainer/GridContainer" groups=["running"] instance=ExtResource( 6 )]
+margin_left = 40.0
+margin_right = 72.0
+icon = "Icon_8"
+
+[node name="stop" parent="VBoxContainer/CenterContainer/GridContainer" groups=["paused", "running"] instance=ExtResource( 6 )]
+margin_left = 80.0
+margin_right = 112.0
+icon = "Icon_9"
+phase = 0
+
+[node name="==EDITORS==" type="Label" parent="VBoxContainer/CenterContainer/GridContainer"]
+visible = false
+margin_top = 3.0
+margin_bottom = 17.0
+
+[node name="editShortBreak" parent="VBoxContainer/CenterContainer/GridContainer" groups=["toggle"] instance=ExtResource( 4 )]
+visible = true
+module = "edit_short"
+
+[node name="editLongBreak" parent="VBoxContainer/CenterContainer/GridContainer" groups=["toggle"] instance=ExtResource( 4 )]
+visible = true
+margin_left = 40.0
+margin_right = 72.0
+icon = "Icon_6"
+module = "edit_long"
+
+[node name="editSessions" parent="VBoxContainer/CenterContainer/GridContainer" groups=["toggle"] instance=ExtResource( 4 )]
+visible = true
+margin_left = 80.0
+margin_right = 112.0
+icon = "Icon_5"
+module = "edit_sessions"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 164.0
+margin_right = 1024.0
+margin_bottom = 164.0
+custom_constants/margin_right = 8
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+margin_right = 1016.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="editShortModule" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer3" groups=["edit_module", "edit_short", "idle"]]
+visible = false
+margin_right = 1016.0
+margin_bottom = 34.0
+script = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer3/editShortModule"]
+margin_right = 1016.0
+margin_bottom = 14.0
+
+[node name="currentShortBreakLengthLabel" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer3/editShortModule/HBoxContainer"]
+margin_right = 1016.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 12 )
+text = "5 min"
+align = 1
+
+[node name="shortSlider" type="HSlider" parent="VBoxContainer/MarginContainer/VBoxContainer3/editShortModule"]
+margin_top = 18.0
+margin_right = 1016.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 200, 16 )
+custom_styles/slider = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 3 )
+min_value = 1.0
+max_value = 30.0
+value = 5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="editLongModule" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer3" groups=["edit_long", "edit_module", "idle"]]
+visible = false
+margin_right = 1016.0
+margin_bottom = 34.0
+script = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer3/editLongModule"]
+margin_right = 1016.0
+margin_bottom = 14.0
+
+[node name="currentFocusLengthLabel" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer3/editLongModule/HBoxContainer"]
+margin_right = 1016.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 12 )
+text = "30 min"
+align = 1
+
+[node name="longSlider" type="HSlider" parent="VBoxContainer/MarginContainer/VBoxContainer3/editLongModule"]
+margin_top = 18.0
+margin_right = 1016.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 200, 16 )
+custom_styles/slider = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 3 )
+min_value = 1.0
+max_value = 60.0
+value = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="editSessionsModule" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer3" groups=["edit_module", "edit_sessions", "idle"]]
+visible = false
+margin_right = 1016.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+script = ExtResource( 13 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer3/editSessionsModule"]
+margin_right = 1016.0
+margin_bottom = 14.0
+
+[node name="sessionsLabel" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer3/editSessionsModule/HBoxContainer"]
+margin_right = 1016.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 12 )
+text = "4"
+align = 1
+
+[node name="sessionSlider" type="HSlider" parent="VBoxContainer/MarginContainer/VBoxContainer3/editSessionsModule"]
+margin_top = 18.0
+margin_right = 1016.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 200, 16 )
+size_flags_horizontal = 3
+custom_styles/slider = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 3 )
+min_value = 1.0
+max_value = 8.0
+value = 4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/Progress/MarginContainer3/HBoxContainer/startButton" to="." method="_on_startButton_pressed"]
+[connection signal="value_changed" from="VBoxContainer/MarginContainer/VBoxContainer3/editShortModule/shortSlider" to="." method="_on_shortSlider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/MarginContainer/VBoxContainer3/editLongModule/longSlider" to="." method="_on_longSlider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/MarginContainer/VBoxContainer3/editSessionsModule/sessionSlider" to="." method="_on_sessionSlider_value_changed"]

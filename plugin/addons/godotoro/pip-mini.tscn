@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.12549, 0.141176, 0.192157, 1 )
+border_color = Color( 0.443137, 0.482353, 0.568627, 1 )
+
+[node name="dot1" type="Panel"]
+margin_left = 474.0
+margin_right = 482.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 8, 8 )
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

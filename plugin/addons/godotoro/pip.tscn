@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/godotoro/pip_normal.tres" type="StyleBox" id=1]
+
+[node name="dot1" type="Panel"]
+margin_left = 474.0
+margin_right = 490.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_styles/panel = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
