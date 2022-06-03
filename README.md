@@ -16,11 +16,11 @@
 Written by Gregory Gauthreaux
 
 ## What does it do?
-Godotoro is a charming and simple addon to help improve your productivity when working within Godot. Gododoro works using the popular time management method called the Pomodoro technique. 
+Godotoro is a charming and simple addon to help improve your productivity when working within Godot. Godotoro works using the popular time management method called the Pomodoro technique. 
 
 ## Installation
 1. Create an `addon` directory in your Godot project.
-2. Create a `gododoro` directory inside `addons`
+2. Create a `godotoro` directory inside `addons`
 3. Copy all of the files there
 4. Enable the plugin in `Project Settings | Plugins`
 
