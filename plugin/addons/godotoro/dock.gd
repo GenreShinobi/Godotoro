@@ -140,6 +140,7 @@ func _set_clock_to_focus(paused :bool = false):
 		ticks -= 1
 	else:
 		_set_clock_to_running()
+	_update_pips()
 	number_of_steps += 1
 
 
@@ -157,6 +158,7 @@ func _set_clock_to_short_break(paused :bool = false):
 		ticks -= 1
 	else:
 		_set_clock_to_running()
+	_update_pips()
 	number_of_steps += 1
 	
 	
@@ -176,6 +178,7 @@ func _set_clock_to_long_break(paused :bool = false):
 		_set_clock_to_paused()
 	else:
 		_set_clock_to_running()
+	_update_pips()
 	number_of_steps += 1
 
 
@@ -183,7 +186,6 @@ func _set_clock_to_running():
 	get_tree().call_group("paused", "toggle", false)
 	get_tree().call_group("running", "toggle", true)
 	emit_signal("start_clock")
-	_update_pips()
 
 
 func _set_clock_to_paused():
@@ -191,7 +193,6 @@ func _set_clock_to_paused():
 	get_tree().call_group("running", "toggle", false)
 	get_tree().call_group("paused", "toggle", true)
 	emit_signal("stop_clock")
-	_update_pips()
 
 
 func _set_clock_to_next_phase():
@@ -204,7 +205,6 @@ func _set_clock_to_next_phase():
 
 
 func _on_ticking():
-	print_debug(String(Phase.keys()[current_phase].to_lower()))
 	ticks -= 1
 	
 	if ticks <= 0:
