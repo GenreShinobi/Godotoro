@@ -49,23 +49,23 @@ Intervals: 4
 Find your flow and get some work done!
 
 # Roadmap
-#### Update 1: Data & Recovery
-**Recovery**
-    My goal for the next update is to add the ability for the clock to recover after rebooting the client. As an avid user of my own tool, it's frustrating when I need to restart my Godot client for other reasons. I'd like it to pick up where it left off and move forward based on the time missed. 
+### Update 1
+**Recovery.**
+My goal for the next update is to add the ability for the clock to recover after rebooting the client. As an avid user of my own tool, it's frustrating when I need to restart my Godot client for other reasons. I'd like it to pick up where it left off and move forward based on the time missed. 
 
-**Data** 
-	I'd like the addon to collect its own data (not to be shared with anyone) but to be able to support basic statistics like "Sessions Completed Today" etc.
+**Data.** 
+I'd like the addon to collect its own data (not to be shared with anyone) but to be able to support basic statistics like "Sessions Completed Today" etc.
 
-#### Update 2: Aesthetics & Vibe
-**Animations**
-	Some subtle animations for when the timer is nearing it's expiration. Ideally for when the clock has expired and is paused waiting for you to begin the next interval. Perhaps a subtle pulse on the pip tracker for the current pip.
+### Update 2
+**Animations.**
+Some subtle animations for when the timer is nearing it's expiration. Ideally for when the clock has expired and is paused waiting for you to begin the next interval. Perhaps a subtle pulse on the pip tracker for the current pip.
 
-**Audio**
-	A subtle sound effect that plays when the clock has expired and is waiting for the next interval to begin. 
+**Audio.**
+A subtle sound effect that plays when the clock has expired and is waiting for the next interval to begin. 
 
-#### Update 3: Stats
-**Stats**
-	Using the Data collected I'd like to slightly increase the tracking of time. The amount of time spent in focused intervals, the number of sessions completed per day for the last 30 days, etc.
+### Update 3
+**Stats.**
+Using the Data collected I'd like to slightly increase the tracking of time. The amount of time spent in focused intervals, the number of sessions completed per day for the last 30 days, etc.
 
 # About Me
 Hai, I'm Greg and I'm an aspiring indie game dev with nothing yet to show, but we're working our way there one project at a time. And this is one of them!
