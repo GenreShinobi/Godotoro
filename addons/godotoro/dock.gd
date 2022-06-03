@@ -1,6 +1,12 @@
 tool
 extends Control
 
+
+enum State {
+	PAUSED,
+	RUNNING
+}
+
 enum Phase {
 	IDLE,
 	PAUSED,
@@ -11,6 +17,7 @@ enum Phase {
 }
 
 var current_phase 				= Phase.FOCUS
+var current_state				= State.PAUSED
 var short_timer 				:int	= 300
 var focus_timer					:int    = 1500
 var long_timer 					:int	= 1800
@@ -121,8 +128,8 @@ func _set_clock_to_focus(paused :bool = false):
 	if current_phase == Phase.LONG_BREAK:
 		number_of_steps = 0
 	current_phase = Phase.FOCUS
-	ticks = focus_timer
-	progress_bar.max_value = focus_timer
+	ticks = focus_timer + 1
+	progress_bar.max_value = focus_timer + 1
 	progress_bar.value = 0
 	if number_of_focus_sessions < max_sessions - 1:
 		get_tree().call_group("idle", "toggle", false)
@@ -183,13 +190,14 @@ func _set_clock_to_long_break(paused :bool = false):
 
 
 func _set_clock_to_running():
+	current_state = State.RUNNING
 	get_tree().call_group("paused", "toggle", false)
 	get_tree().call_group("running", "toggle", true)
 	emit_signal("start_clock")
 
 
 func _set_clock_to_paused():
-	current_phase = Phase.PAUSED
+	current_state = State.PAUSED
 	get_tree().call_group("running", "toggle", false)
 	get_tree().call_group("paused", "toggle", true)
 	emit_signal("stop_clock")
@@ -205,13 +213,14 @@ func _set_clock_to_next_phase():
 
 
 func _on_ticking():
-	ticks -= 1
-	
-	if ticks <= 0:
-		_set_clock_to_next_phase()
-		progress_bar.value = 0
-	else:
-		progress_bar.value += 1
+	print(String(Phase.keys()[current_phase]))
+	if current_state == State.RUNNING:
+		ticks -= 1
+		if ticks <= 0:
+			_set_clock_to_next_phase()
+			progress_bar.value = 0
+		else:
+			progress_bar.value += 1
 
 	var time = ticks
 	var seconds = time % 60
