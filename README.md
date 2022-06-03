@@ -3,7 +3,7 @@
 	<img src="https://media.giphy.com/media/z2HJwBYkGmtY9GxvDE/giphy.gif" width="30"/> Godotoro <img src="https://media.giphy.com/media/IbewbefVtNhfHyOjEV/giphy.gif" width="30"/>
 	</h1>
     	<div align="center">
-	  <img src="https://i.imgur.com/caYp99k.png" width="600" height="300"/>
+	  <img src="https://github.com/GenreShinobi/Godotoro/blob/main/godotoro-screenshot-banner.png?raw=true" width="600"/>
 	</div>
 	<div id="badges" align="center">
 		<a href="https://www.linkedin.com/in/greggauthreaux/"><img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/></a>
