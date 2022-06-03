@@ -1,23 +1,22 @@
 <div id="header" align="center">
-    <img src="https://media.giphy.com/media/R03zWv5p1oNSQd91EP/giphy.gif" width="100"/>
-</div>
-<div id="badges" align="center">
-	<a href="https://www.linkedin.com/in/greggauthreaux/">
-	  <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
-	</a>
-	<a href="https://ko-fi.com/Y8Y513B7Q">
-	    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ff693b?style=for-the-badge" alt="Ko-fi Badge"/>
-    </a>
-	<a href="https://twitter.com/genreshinobi">
-	    <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
-    </a>
-    <div  align="center"><img src="https://komarev.com/ghpvc/?username=GenreShinobi&style=flat-square&color=blue" alt=""/></div>
-</div>
-<h1 align="center">
-<img src="https://media.giphy.com/media/z2HJwBYkGmtY9GxvDE/giphy.gif" width="30"/> Godotoro <img src="https://media.giphy.com/media/IbewbefVtNhfHyOjEV/giphy.gif" width="30"/>
-</h1>
-<div align="center">
-  <img src="https://i.imgur.com/caYp99k.png" width="600" height="300"/>
+		<h1 align="center">
+	<img src="https://media.giphy.com/media/z2HJwBYkGmtY9GxvDE/giphy.gif" width="30"/> Godotoro <img src="https://media.giphy.com/media/IbewbefVtNhfHyOjEV/giphy.gif" width="30"/>
+	</h1>
+    	<div align="center">
+	  <img src="https://i.imgur.com/caYp99k.png" width="600" height="300"/>
+	</div>
+	<div id="badges" align="center">
+		<a href="https://www.linkedin.com/in/greggauthreaux/">
+		  <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+		</a>
+		<a href="https://ko-fi.com/Y8Y513B7Q">
+		    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ff693b?style=for-the-badge" alt="Ko-fi Badge"/>
+	    </a>
+		<a href="https://twitter.com/genreshinobi">
+		    <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
+	    </a>
+	    <div  align="center"><img src="https://komarev.com/ghpvc/?username=GenreShinobi&style=flat-square&color=blue" alt=""/></div>
+	</div>
 </div>
 
 # Godotoro, A Productivity Addon
