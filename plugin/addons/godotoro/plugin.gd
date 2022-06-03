@@ -11,6 +11,7 @@ var tick = false
 
 signal ticking
 
+
 func _enter_tree():
 	# Add the main panel
 	dock = Dock.instance()
@@ -25,6 +26,7 @@ func _exit_tree():
 		remove_control_from_docks(dock)
 		dock.free()
 
+
 func _process(delta):
 	if tick:
 		timer += delta
@@ -32,8 +34,10 @@ func _process(delta):
 			timer = 0
 			emit_signal("ticking")
 
+
 func _on_stop_ticking():
 	tick = false
+
 
 func _on_start_ticking():
 	tick = true

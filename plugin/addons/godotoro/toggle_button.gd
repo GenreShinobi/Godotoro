@@ -14,10 +14,8 @@ func _ready():
 
 
 func toggle(on):
-	if on:
-		show()
-	else:
-		hide()
+	if on: show()
+	else: hide()
 
 
 func _on_ToggleButton_mouse_entered() -> void:

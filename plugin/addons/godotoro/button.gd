@@ -23,16 +23,15 @@ signal enter_short_break
 signal enter_focus
 signal enter_long_break
 
+
 func _ready():
 	var icon_texture : TextureRect = $CenterContainer/TextureRect
 	icon_texture.texture = load("res://addons/godotoro/" + icon + ".png")
 
 
 func toggle(on):
-	if on:
-		show()
-	else:
-		hide()
+	if on: show()
+	else: hide()
 
 
 func _on_Button_mouse_entered() -> void:

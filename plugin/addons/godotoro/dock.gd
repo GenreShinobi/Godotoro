@@ -3,8 +3,8 @@ extends Control
 
 enum Phase {
 	IDLE,
-	PAUSE,
-	UNPAUSE,
+	PAUSED,
+	RUNNING,
 	FOCUS,
 	SHORT_BREAK,
 	LONG_BREAK
@@ -103,6 +103,7 @@ func _update_pips():
 			pip.add_stylebox_override("panel", style_normal)
 		count += 1
 
+
 func _set_clock_to_idle():
 	emit_signal("stop_clock")
 	current_phase = Phase.IDLE
@@ -141,6 +142,7 @@ func _set_clock_to_focus(paused :bool = false):
 		_set_clock_to_running()
 	number_of_steps += 1
 
+
 func _set_clock_to_short_break(paused :bool = false):
 	current_icon.texture = load_icon("Icon_4")
 	current_phase = Phase.SHORT_BREAK
@@ -156,6 +158,7 @@ func _set_clock_to_short_break(paused :bool = false):
 	else:
 		_set_clock_to_running()
 	number_of_steps += 1
+	
 	
 func _set_clock_to_long_break(paused :bool = false):
 	current_icon.texture = load_icon("Icon_6")
@@ -184,11 +187,12 @@ func _set_clock_to_running():
 
 
 func _set_clock_to_paused():
-	current_phase = Phase.PAUSE
+	current_phase = Phase.PAUSED
 	get_tree().call_group("running", "toggle", false)
 	get_tree().call_group("paused", "toggle", true)
 	emit_signal("stop_clock")
 	_update_pips()
+
 
 func _set_clock_to_next_phase():
 	if current_phase == Phase.FOCUS and number_of_focus_sessions < max_sessions:
@@ -197,6 +201,7 @@ func _set_clock_to_next_phase():
 		_set_clock_to_long_break(true)
 	elif current_phase == Phase.SHORT_BREAK or current_phase == Phase.LONG_BREAK:
 		_set_clock_to_focus(true)
+
 
 func _on_ticking():
 	print_debug(String(Phase.keys()[current_phase].to_lower()))

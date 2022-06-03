@@ -3,7 +3,5 @@ extends Button
 
 
 func toggle(on):
-	if on:
-		show()
-	else:
-		hide()
+	if on: show()
+	else: hide()
