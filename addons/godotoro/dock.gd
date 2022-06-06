@@ -213,7 +213,7 @@ func _set_clock_to_next_phase():
 
 
 func _on_ticking():
-	print(String(Phase.keys()[current_phase]))
+#	print(String(Phase.keys()[current_phase]))
 	if current_state == State.RUNNING:
 		ticks -= 1
 		if ticks <= 0:
